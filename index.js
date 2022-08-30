@@ -4,7 +4,7 @@ require('dotenv').config()
 const bot = new Telegraf(process.env.BOT_TOKEN)
 const db = new sqlite3('users.db')
 
-const cancel = [
+const cancel = [ 
   ['Отмена']
 ]
 
@@ -126,7 +126,7 @@ bot.command('admin', async (ctx, next) => {
   return ctx.reply(
 		"Оберіть спосіб оплати",
 		Markup.keyboard([
-			["Приват банк", "Інші українські банки"],
+			["Моно банк", "Інші українські банки"],
 			["Доларова карта $", "Євро карта €"],
 			["Оплата криптовалютою"],
 		])
@@ -135,17 +135,17 @@ bot.command('admin', async (ctx, next) => {
 	); 
 });
 
-bot.hears("Приват банк", ctx => ctx.reply("Доступ в закритий канал на тиждень : 2000 грн\nРеквізити для оплати :\n5168755451995233\nВідправте скріншот про оплату менеджеру @Dianka43211")); 
-bot.hears("Інші українські банки", ctx => ctx.reply("Доступ в закритий канал на тиждень : 2000 грн\nРеквізити для оплати :\n5168755451995233\nВідправте скріншот про оплату менеджеру @Dianka43211"));
-bot.hears("Доларова карта $", ctx => ctx.reply("Доступ в закритий канал на тиждень : 50 $\nРеквізити для оплати :\n5168752014743069\nВідправте скріншот про оплату менеджеру @Dianka43211"));
-bot.hears("Євро карта €", ctx => ctx.reply("Доступ в закритий канал на тиждень : 50 €\nРеквізити для оплати :\n4149499387334806\nВідправте скріншот про оплату менеджеру @Dianka43211"));
+bot.hears("Моно банк", ctx => ctx.reply("Доступ в закритий канал на тиждень : 2000 грн\nРеквізити для оплати :\n5375411416058902\nВідправте скріншот про оплату менеджеру @Dianka43211")); 
+bot.hears("Інші українські банки", ctx => ctx.reply("Доступ в закритий канал на тиждень : 2000 грн\nРеквізити для оплати :\n5375411416058902\nВідправте скріншот про оплату менеджеру @Dianka43211"));
+bot.hears("Доларова карта $", ctx => ctx.reply("Доступ в закритий канал на тиждень : 50 $\nРеквізити для оплати :\n4441114481843645\nВідправте скріншот про оплату менеджеру @Dianka43211"));
+bot.hears("Євро карта €", ctx => ctx.reply("Доступ в закритий канал на тиждень : 50 €\nРеквізити для оплати :\n4441114492569320\nВідправте скріншот про оплату менеджеру @Dianka43211"));
 bot.hears("Оплата криптовалютою", ctx => ctx.reply("Доступ в закритий канал на тиждень : 50 USDT\nРеквізити для оплати :\n[USDT adress](https://link.trustwallet.com/send?address=TGdQDbCfLB4h6X7zPQLDuwtK6zNfg74EMn&asset=c195_tTR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t)\nВідправте скріншот про оплату менеджеру @Dianka43211"));
 
 bot.action('pay_ru', (ctx) => { 
   return ctx.reply(
 		"Выберите способ оплаты",
 		Markup.keyboard([
- 			["Приватбанк", "Другие украинские банки"],
+ 			["Монобанк", "Другие украинские банки"],
 			["Доларовая карта $", "Евро карта €"],
 			["Оплата криптовалютой"],
 		])
@@ -154,17 +154,17 @@ bot.action('pay_ru', (ctx) => {
 	); 
 });
 
-bot.hears("Приватбанк", ctx => ctx.reply("Доступ в закрытый канал на неделю : 2000 грн\nРеквизиты для оплаты :\n5168755451995233\nOтправьте скриншот про оплату менеджеру @Dianka43211"));
-bot.hears("Другие украинские банки", ctx => ctx.reply("Доступ в закрытый канал на неделю : 2000 грн\nРеквизиты для оплаты :\n5168755451995233\Отправьте скриншот про оплату менеджеру @Dianka43211"));
-bot.hears("Доларовая карта $", ctx => ctx.reply("Доступ в закрытый канал на неделю : 50 $\nРеквизиты для оплаты :\n5168752014743069\nOтправьте скриншот про оплату менеджеру @Dianka43211"));
-bot.hears("Евро карта €", ctx => ctx.reply("Доступ в закрытый канал на неделю : 50 €\nРеквизиты для оплаты :\n4149499387334806\nOтправьте скриншот про оплату менеджеру @Dianka43211"));
+bot.hears("Монобанк", ctx => ctx.reply("Доступ в закрытый канал на неделю : 2000 грн\nРеквизиты для оплаты :\n5375411416058902\nOтправьте скриншот про оплату менеджеру @Dianka43211"));
+bot.hears("Другие украинские банки", ctx => ctx.reply("Доступ в закрытый канал на неделю : 2000 грн\nРеквизиты для оплаты :\n5375411416058902\Отправьте скриншот про оплату менеджеру @Dianka43211"));
+bot.hears("Доларовая карта $", ctx => ctx.reply("Доступ в закрытый канал на неделю : 50 $\nРеквизиты для оплаты :\n4441114481843645\nOтправьте скриншот про оплату менеджеру @Dianka43211"));
+bot.hears("Евро карта €", ctx => ctx.reply("Доступ в закрытый канал на неделю : 50 €\nРеквизиты для оплаты :\n4441114492569320\nOтправьте скриншот про оплату менеджеру @Dianka43211"));
 bot.hears("Оплата криптовалютой", ctx => ctx.reply("Доступ в закрытый канал на неделю : 50 USDT\nРеквизиты для оплаты :\n[USDT adress](https://link.trustwallet.com/send?address=TGdQDbCfLB4h6X7zPQLDuwtK6zNfg74EMn&asset=c195_tTR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t)\nOтправьте скриншот про оплату менеджеру @Dianka43211"));
 
 bot.action('pay_eng', (ctx) => { 
   return ctx.reply(
 		"Choose payment method",
 		Markup.keyboard([
- 			["Privat bank", "Other ukrainian banks"],
+ 			["Mono bank", "Other ukrainian banks"],
 			["Dollars card $", "Euros cards €"],
 			["Pay by crypto"],
 		])
@@ -173,10 +173,10 @@ bot.action('pay_eng', (ctx) => {
 	); 
 });
 
-bot.hears("Privat bank", ctx => ctx.reply("Access to closed channel for a week : 2000 UAH\ndetails for payment :\n5168755451995233\nSend a screenshot of the payment to the manager @Dianka43211"));
-bot.hears("Other ukrainian banks", ctx => ctx.reply("Access to closed channel for a week : 2000 UAH\ndetails for payment :\n5168755451995233\nSend a screenshot of the payment to the manager @Dianka43211"));
-bot.hears("Dollars card $", ctx => ctx.reply("Access to closed channel for a week : 50 $\ndetails for payment :\n5168752014743069\nSend a screenshot of the payment to the manager @Dianka43211"));
-bot.hears("Euros cards €", ctx => ctx.reply("Access to closed channel for a week : 50 €\ndetails for payment :\n4149499387334806\nSend a screenshot of the payment to the manager @Dianka43211"));
+bot.hears("Mono bank", ctx => ctx.reply("Access to closed channel for a week : 2000 UAH\ndetails for payment :\n5375411416058902\nSend a screenshot of the payment to the manager @Dianka43211"));
+bot.hears("Other ukrainian banks", ctx => ctx.reply("Access to closed channel for a week : 2000 UAH\ndetails for payment :\n5375411416058902\nSend a screenshot of the payment to the manager @Dianka43211"));
+bot.hears("Dollars card $", ctx => ctx.reply("Access to closed channel for a week : 50 $\ndetails for payment :\n4441114481843645\nSend a screenshot of the payment to the manager @Dianka43211"));
+bot.hears("Euros cards €", ctx => ctx.reply("Access to closed channel for a week : 50 €\ndetails for payment :\n4441114492569320\nSend a screenshot of the payment to the manager @Dianka43211"));
 bot.hears("Pay by crypto", ctx => ctx.reply("Access to closed channel for a week : 50 USDT\ndetails for payment :\n[USDT adress](https://link.trustwallet.com/send?address=TGdQDbCfLB4h6X7zPQLDuwtK6zNfg74EMn&asset=c195_tTR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t)\nSend a screenshot of the payment to the manager @Dianka43211"));
 
 bot.on('chat_join_request', async (ctx) => {
